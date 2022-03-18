@@ -1,10 +1,13 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
+
+import HeaderNavigation from '../Components/HeaderNavigation';
 
 const Home = () => {
   return (
-    <SafeAreaView>
-      <Text>Home</Text>
+    <SafeAreaView s tyle={styles.container}>
+      <HeaderNavigation headerTitle="News" />
+      <Text>HELLO</Text>
     </SafeAreaView>
   );
 };
