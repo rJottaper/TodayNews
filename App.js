@@ -2,16 +2,10 @@ import { StyleSheet, Text, SafeAreaView } from 'react-native';
 
 import AuthRoutes from './src/Routes/AuthRoutes';
 
-export default function App() {
+const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <AuthRoutes />
-    </SafeAreaView>
+    <AuthRoutes />
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+export default App;

@@ -12,11 +12,17 @@ const HeaderNavigation = ({ headerTitle }) => {
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    height: 100,
-    backgroundColor: '#191970'
+    height: 65,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   headerTitle: {
-
+    fontSize: 22,
+    color: '#098EAF',
+    borderWidth: 1,
+    borderColor: '#098EAF',
+    padding: 5
   }
 });
 
