@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet, Image, View, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, StyleSheet, Image, View } from 'react-native';
 import welcome from '../../assets/welcome.png';
+import Button from '../Components/Button';
 
 const Welcome = () => {
   const navigation = useNavigation() 
@@ -12,12 +13,9 @@ const Welcome = () => {
         <Image source={ welcome } style={styles.imagem}/>
       </View>
       <View style={styles.detalhes}>
-      <Text style={styles.bemVindo}>Bem vindo ao TodayNews</Text>
-      <Text style={styles.descricao}>Aqui você tem acesso a notícias em tempo real</Text>
-      <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.textoBotao}>Avançar</Text>
-      </TouchableOpacity>
-
+        <Text style={styles.bemVindo}>Bem vindo ao TodayNews</Text>
+        <Text style={styles.descricao}>Aqui você tem acesso a notícias em tempo real</Text>
+        <Button onPress={() => navigation.navigate('Home')} Texto="Avançar"/>
       </View>
 
 
@@ -32,11 +30,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   divImagem: {
+    width: '100%',
+    height: 250,
     alignItems: 'center',
   },
   imagem: {
-    width: 250,
-    height: 250,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover'
   },
   detalhes:{
     paddingHorizontal: 30
@@ -49,17 +50,6 @@ const styles = StyleSheet.create({
   descricao: {
     marginVertical: 5
   },
-  botao: {
-    borderRadius: 8,
-    paddingVertical: 16,
-    backgroundColor: '#098eaf',
-    marginVertical: 30,
-    alignItems: 'center'
-  },
-  textoBotao: {
-    color: "white",
-    fontWeight: 'bold'
-  }
 
 });
 

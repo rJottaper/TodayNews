@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, Text, ScrollView, FlatList, StyleSheet } from 'react-native';
 
@@ -6,9 +7,12 @@ import Card from '../Components/Card';
 
 import { GetItems } from '../Services/CallApi';
 import API from '../Services/API';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Home = () => {
+
   const [news, setNews] = useState([]);
+
 
   // Request API
   const APINews = async () => {
@@ -36,7 +40,8 @@ const Home = () => {
               data={news}
               keyExtractor={(item, index) => 'key' + index}
               renderItem={({ item }) => <Card title={item.title} source={item.urlToImage} description={item.description} publishedAt={item.publishedAt} />}
-            />
+           />
+
           </View>
         </View>
       </ScrollView>

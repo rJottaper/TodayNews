@@ -1,12 +1,15 @@
 import React from 'react';
+import { useNavigation  } from '@react-navigation/native';
 import { Image, View, Text, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 
 const width  = Dimensions.get('screen').width / 1.20
 const height = Dimensions.get('screen').height / 3
 
 const Card = ({ title, source, description, publishedAt }) => {
+  const navigation = useNavigation() 
+
   return (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Details', {title: title, source: source, description: description, publishedAt: publishedAt })}>
       <Image style={styles.image} source={{ uri: source }} />
       <View style={styles.cardTexts}>
         <Text numberOfLines={2} style={styles.cardTitle}>{title}</Text>
